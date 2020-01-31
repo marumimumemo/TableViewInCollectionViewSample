@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
 
         //カスタムセル登録
-        let nib = UINib(nibName: "tableViewCell", bundle: nil)
+        let nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "tableViewCell2")
 
         //tableViewの使わないセルの区切り線を消す

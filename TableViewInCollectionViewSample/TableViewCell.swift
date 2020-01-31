@@ -15,7 +15,7 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // カスタムセルの登録
-        let nib = UINib(nibName: "collectionViewCell", bundle: nil)
+        let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "collectionViewCell2")
     }
 
