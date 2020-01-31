@@ -15,14 +15,26 @@ class ViewController: UIViewController {
                 ["name" : "park",
                  "imageName" : "park"],
                 ["name" : "park",
+                 "imageName" : "park"],
+                ["name" : "park",
+                 "imageName" : "park"],
+                ["name" : "park",
                  "imageName" : "park"]]
     var sun = [["name" : "sun",
                   "imageName" : "sun"],
                  ["name" : "sun",
                   "imageName" : "sun"],
                  ["name" : "sun",
+                 "imageName" : "sun"],
+                 ["name" : "sun",
+                 "imageName" : "sun"],
+                 ["name" : "sun",
                   "imageName" : "sun"]]
     var wave = [["name" : "wave",
+                  "imageName" : "wave"],
+                 ["name" : "wave",
+                  "imageName" : "wave"],
+                 ["name" : "wave",
                   "imageName" : "wave"],
                  ["name" : "wave",
                   "imageName" : "wave"],
@@ -45,18 +57,18 @@ class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
 
         //tableViewの高さ指定
-        tableView.rowHeight = 200
+        tableView.rowHeight = 250
     }
 }
 
 extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 240, height: 180)
+        return CGSize(width: 240, height: 150)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
@@ -84,7 +96,7 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
 }
 
 
-extension ViewController:   UITableViewDataSource, UITableViewDelegate {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     //セクション数
     func numberOfSections(in tableView: UITableView) -> Int {
