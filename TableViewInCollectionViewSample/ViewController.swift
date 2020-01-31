@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
 
         //tableViewの高さ指定
-        tableView.rowHeight = 240
+        tableView.rowHeight = 230
     }
 }
 
@@ -95,7 +95,7 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell2", for: indexPath) as! CollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell2", for: indexPath) as? CollectionViewCell else {fatalError()}
 
         switch (collectionView.tag) {
         case 0:
@@ -147,7 +147,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     //セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell2", for: indexPath) as! TableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell2", for: indexPath) as? TableViewCell else {fatalError()}
 
         //TableViewCell.swiftで設定したメソッドを呼び出す(indexPath.row)
         cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
