@@ -10,58 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var park = [["name" : "park",
-                 "imageName" : "park"],
-                ["name" : "park",
-                 "imageName" : "park"],
-                ["name" : "park",
-                 "imageName" : "park"],
-                ["name" : "park",
-                 "imageName" : "park"],
-                ["name" : "park",
-                 "imageName" : "park"]]
-    var sun = [["name" : "sun",
-                  "imageName" : "sun"],
-                 ["name" : "sun",
-                  "imageName" : "sun"],
-                 ["name" : "sun",
-                 "imageName" : "sun"],
-                 ["name" : "sun",
-                 "imageName" : "sun"],
-                 ["name" : "sun",
-                  "imageName" : "sun"]]
-    var wave = [["name" : "wave",
-                  "imageName" : "wave"],
-                 ["name" : "wave",
-                  "imageName" : "wave"],
-                 ["name" : "wave",
-                  "imageName" : "wave"],
-                 ["name" : "wave",
-                  "imageName" : "wave"],
-                 ["name" : "wave",
-                  "imageName" : "wave"]]
+    var park = [["imageName" : "park"],
+                ["imageName" : "park"],
+                ["imageName" : "park"],
+                ["imageName" : "park"],
+                ["imageName" : "park"]]
     
-    var road = [["name" : "road",
-                  "imageName" : "road"],
-                 ["name" : "road",
-                  "imageName" : "road"],
-                 ["name" : "road",
-                  "imageName" : "road"],
-                 ["name" : "road",
-                  "imageName" : "road"],
-                 ["name" : "road",
-                  "imageName" : "road"]]
+    var sun = [["imageName" : "sun"],
+               ["imageName" : "sun"],
+               ["imageName" : "sun"],
+               ["imageName" : "sun"],
+               ["imageName" : "sun"]]
     
-    var flower = [["name" : "flower",
-                  "imageName" : "flower"],
-                 ["name" : "flower",
-                  "imageName" : "flower"],
-                 ["name" : "flower",
-                  "imageName" : "flower"],
-                 ["name" : "flower",
-                  "imageName" : "flower"],
-                 ["name" : "flower",
-                  "imageName" : "flower"]]
+    var wave = [["imageName" : "wave"],
+                ["imageName" : "wave"],
+                ["imageName" : "wave"],
+                ["imageName" : "wave"],
+                ["imageName" : "wave"]]
+    
+    var road = [["imageName" : "road"],
+                ["imageName" : "road"],
+                ["imageName" : "road"],
+                ["imageName" : "road"],
+                ["imageName" : "road"]]
+    
+    var flower = [["imageName" : "flower"],
+                  ["imageName" : "flower"],
+                  ["imageName" : "flower"],
+                  ["imageName" : "flower"],
+                  ["imageName" : "flower"]]
 
     var tableView: UITableView?
 
@@ -104,23 +81,18 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
         switch (collectionView.tag) {
         case 0:
             cell.imageView.image = UIImage(named: park[indexPath.row]["imageName"]!)
-            cell.textLabel.text = park[indexPath.row]["name"]
 
         case 1:
             cell.imageView.image = UIImage(named: sun[indexPath.row]["imageName"]!)
-            cell.textLabel.text = sun[indexPath.row]["name"]
 
         case 2:
             cell.imageView.image = UIImage(named: wave[indexPath.row]["imageName"]!)
-            cell.textLabel.text = wave[indexPath.row]["name"]
         
         case 3:
             cell.imageView.image = UIImage(named: road[indexPath.row]["imageName"]!)
-            cell.textLabel.text = road[indexPath.row]["name"]
             
         case 4:
             cell.imageView.image = UIImage(named: flower[indexPath.row]["imageName"]!)
-            cell.textLabel.text = flower[indexPath.row]["name"]
 
         default:
             print("section error")
