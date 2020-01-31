@@ -63,13 +63,17 @@ class ViewController: UIViewController {
                  ["name" : "flower",
                   "imageName" : "flower"]]
 
-    @IBOutlet weak var tableView: UITableView!
+    var tableView: UITableView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ファイル内処理
+        
+        let tableView = UITableView(frame: view.frame, style: .grouped)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+        self.tableView = tableView
 
         //カスタムセル登録
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
