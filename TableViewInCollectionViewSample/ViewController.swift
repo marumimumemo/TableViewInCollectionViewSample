@@ -40,6 +40,28 @@ class ViewController: UIViewController {
                   "imageName" : "wave"],
                  ["name" : "wave",
                   "imageName" : "wave"]]
+    
+    var road = [["name" : "road",
+                  "imageName" : "road"],
+                 ["name" : "road",
+                  "imageName" : "road"],
+                 ["name" : "road",
+                  "imageName" : "road"],
+                 ["name" : "road",
+                  "imageName" : "road"],
+                 ["name" : "road",
+                  "imageName" : "road"]]
+    
+    var flower = [["name" : "flower",
+                  "imageName" : "flower"],
+                 ["name" : "flower",
+                  "imageName" : "flower"],
+                 ["name" : "flower",
+                  "imageName" : "flower"],
+                 ["name" : "flower",
+                  "imageName" : "flower"],
+                 ["name" : "flower",
+                  "imageName" : "flower"]]
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -57,7 +79,7 @@ class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
 
         //tableViewの高さ指定
-        tableView.rowHeight = 250
+        tableView.rowHeight = 240
     }
 }
 
@@ -87,6 +109,14 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
         case 2:
             cell.imageView.image = UIImage(named: wave[indexPath.row]["imageName"]!)
             cell.textLabel.text = wave[indexPath.row]["name"]
+        
+        case 3:
+            cell.imageView.image = UIImage(named: road[indexPath.row]["imageName"]!)
+            cell.textLabel.text = road[indexPath.row]["name"]
+            
+        case 4:
+            cell.imageView.image = UIImage(named: flower[indexPath.row]["imageName"]!)
+            cell.textLabel.text = flower[indexPath.row]["name"]
 
         default:
             print("section error")
@@ -100,7 +130,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     //セクション数
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 5
     }
 
     //セクション内のセル数
