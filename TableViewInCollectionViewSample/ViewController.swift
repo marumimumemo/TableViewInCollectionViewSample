@@ -70,7 +70,7 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell2", for: indexPath) as? CollectionViewCell else {fatalError()}
 
         switch (collectionView.tag) {
-        case 1:
+        case 0:
             cell.imageView.image = UIImage(named: recommend[indexPath.row]["imageName"]!)
             cell.titleLabel.text = recommend[indexPath.row]["title"]
             cell.moneyLabel.text = recommend[indexPath.row]["money"]
@@ -85,27 +85,14 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
 
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-
-    enum Section: Int {
-        case normal = 0
-        case recommend
-    }
     //セクション数
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
 
     //セクション内のセル数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch Section(rawValue: section) {
-        case .normal?:
-            return 5
-        case .recommend?:
-            return 1
-        case .none:
-            return 0
-        }
-        
+        return 100
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -117,7 +104,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     //セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        if indexPath.section == 1 {
+        if indexPath.row == 20 || (indexPath.row - 20) % 40 == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell2", for: indexPath) as? TableViewCell else {fatalError()}
             
             //TableViewCell.swiftで設定したメソッドを呼び出す(indexPath.row)
