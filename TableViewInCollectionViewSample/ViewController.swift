@@ -10,26 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var park = [["title": "丸亀製麺",
+    var recommend = [["title": "公園設営",
                  "money": "時給5000円",
                  "place": "不動前",
                  "imageName" : "park"],
-                ["title": "マクドナルド",
+                ["title": "道路工事",
                 "money": "時給999円",
                 "place": "目黒",
-                "imageName" : "park"],
-                ["title": "漫画喫茶",
+                "imageName" : "road"],
+                ["title": "生花講師",
                  "money": "時給999円",
                  "place": "五反田",
-                 "imageName" : "park"],
-                ["title": "Hub",
+                 "imageName" : "flower"],
+                ["title": "リゾートバイト",
                  "money": "時給4999円",
                  "place": "五反田",
-                 "imageName" : "park"],
-                ["title": "ミート矢澤",
+                 "imageName" : "sun"],
+                ["title": "海の家",
                  "money": "時給4999円",
                  "place": "五反田",
-                 "imageName" : "park"]]
+                 "imageName" : "wave"]]
     
     var sun = [["imageName" : "sun"],
                ["imageName" : "sun"],
@@ -95,10 +95,10 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
 
         switch (collectionView.tag) {
         case 0:
-            cell.imageView.image = UIImage(named: park[indexPath.row]["imageName"]!)
-            cell.titleLabel.text = park[indexPath.row]["title"]
-            cell.moneyLabel.text = park[indexPath.row]["money"]
-            cell.placeLabel.text = park[indexPath.row]["place"]
+            cell.imageView.image = UIImage(named: recommend[indexPath.row]["imageName"]!)
+            cell.titleLabel.text = recommend[indexPath.row]["title"]
+            cell.moneyLabel.text = recommend[indexPath.row]["money"]
+            cell.placeLabel.text = recommend[indexPath.row]["place"]
 
         case 1:
             cell.imageView.image = UIImage(named: sun[indexPath.row]["imageName"]!)
