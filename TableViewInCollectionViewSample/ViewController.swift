@@ -30,30 +30,6 @@ class ViewController: UIViewController {
                  "money": "時給4999円",
                  "place": "五反田",
                  "imageName" : "wave"]]
-    
-    var sun = [["imageName" : "sun"],
-               ["imageName" : "sun"],
-               ["imageName" : "sun"],
-               ["imageName" : "sun"],
-               ["imageName" : "sun"]]
-    
-    var wave = [["imageName" : "wave"],
-                ["imageName" : "wave"],
-                ["imageName" : "wave"],
-                ["imageName" : "wave"],
-                ["imageName" : "wave"]]
-    
-    var road = [["imageName" : "road"],
-                ["imageName" : "road"],
-                ["imageName" : "road"],
-                ["imageName" : "road"],
-                ["imageName" : "road"]]
-    
-    var flower = [["imageName" : "flower"],
-                  ["imageName" : "flower"],
-                  ["imageName" : "flower"],
-                  ["imageName" : "flower"],
-                  ["imageName" : "flower"]]
 
     var tableView: UITableView?
 
@@ -110,14 +86,26 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
+    enum Section: Int {
+        case recommend = 0
+        case normal
+    }
     //セクション数
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     //セクション内のセル数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch Section(rawValue: section) {
+        case .recommend?:
+            return 1
+        case .normal?:
+            return 5
+        case .none:
+            return 0
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -129,12 +117,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     //セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell2", for: indexPath) as? TableViewCell else {fatalError()}
-
-        //TableViewCell.swiftで設定したメソッドを呼び出す(indexPath.row)
-        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-        cell.collectionView.reloadData()
-        return cell
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell2", for: indexPath) as? TableViewCell else {fatalError()}
+            
+            //TableViewCell.swiftで設定したメソッドを呼び出す(indexPath.row)
+            cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+            cell.collectionView.reloadData()
+            return cell
+        }
+        return UITableViewCell()
     }
 
     //セルが選択された時の対処
@@ -143,4 +134,3 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
 }
-
