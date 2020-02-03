@@ -8,15 +8,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell2" rowHeight="337" id="pfY-8C-C95" customClass="TableViewCell" customModule="TableViewInCollectionViewSample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="602" height="337"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell2" rowHeight="206" id="pfY-8C-C95" customClass="TableViewCell" customModule="TableViewInCollectionViewSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="206"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfY-8C-C95" id="tuz-Gz-C9I">
-                <rect key="frame" x="0.0" y="0.0" width="602" height="337"/>
+                <rect key="frame" x="0.0" y="0.0" width="405" height="206"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BA3-Rr-zxA">
+                        <rect key="frame" x="0.0" y="0.0" width="405" height="256"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZT-qQ-SQt">
+                        <rect key="frame" x="20" y="16" width="277" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" id="ubB-kV-i00">
-                        <rect key="frame" x="0.0" y="45" width="602" height="247"/>
+                        <rect key="frame" x="20" y="38" width="365" height="157"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UhW-aW-E8o">
@@ -26,20 +38,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZT-qQ-SQt">
-                        <rect key="frame" x="20" y="16" width="402" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="collectionView" destination="ubB-kV-i00" id="FiB-oZ-DWj"/>
                 <outlet property="titleLabel" destination="9ZT-qQ-SQt" id="56X-o3-6gc"/>
+                <outlet property="view" destination="BA3-Rr-zxA" id="5oh-hJ-MdE"/>
             </connections>
-            <point key="canvasLocation" x="102.89855072463769" y="27.120535714285712"/>
+            <point key="canvasLocation" x="-39.855072463768117" y="-16.741071428571427"/>
         </tableViewCell>
     </objects>
 </document>

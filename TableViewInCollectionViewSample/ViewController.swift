@@ -86,7 +86,7 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 240, height: 150)
+        return CGSize(width: 200, height: 120)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
@@ -100,17 +100,6 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
             cell.moneyLabel.text = recommend[indexPath.row]["money"]
             cell.placeLabel.text = recommend[indexPath.row]["place"]
 
-        case 1:
-            cell.imageView.image = UIImage(named: sun[indexPath.row]["imageName"]!)
-        case 2:
-            cell.imageView.image = UIImage(named: wave[indexPath.row]["imageName"]!)
-        
-        case 3:
-            cell.imageView.image = UIImage(named: road[indexPath.row]["imageName"]!)
-            
-        case 4:
-            cell.imageView.image = UIImage(named: flower[indexPath.row]["imageName"]!)
-
         default:
             print("section error")
         }
@@ -123,7 +112,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     //セクション数
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 1
     }
 
     //セクション内のセル数
@@ -151,10 +140,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     //セルが選択された時の対処
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "section\(section + 1)"
     }
 
 }
