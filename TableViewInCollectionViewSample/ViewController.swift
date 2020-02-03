@@ -10,11 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var park = [["imageName" : "park"],
-                ["imageName" : "park"],
-                ["imageName" : "park"],
-                ["imageName" : "park"],
-                ["imageName" : "park"]]
+    var park = [["title": "丸亀製麺",
+                 "money": "時給5000円",
+                 "place": "不動前",
+                 "imageName" : "park"],
+                ["title": "マクドナルド",
+                "money": "時給999円",
+                "place": "目黒",
+                "imageName" : "park"],
+                ["title": "漫画喫茶",
+                 "money": "時給999円",
+                 "place": "五反田",
+                 "imageName" : "park"],
+                ["title": "Hub",
+                 "money": "時給4999円",
+                 "place": "五反田",
+                 "imageName" : "park"],
+                ["title": "ミート矢澤",
+                 "money": "時給4999円",
+                 "place": "五反田",
+                 "imageName" : "park"]]
     
     var sun = [["imageName" : "sun"],
                ["imageName" : "sun"],
@@ -81,10 +96,12 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
         switch (collectionView.tag) {
         case 0:
             cell.imageView.image = UIImage(named: park[indexPath.row]["imageName"]!)
+            cell.titleLabel.text = park[indexPath.row]["title"]
+            cell.moneyLabel.text = park[indexPath.row]["money"]
+            cell.placeLabel.text = park[indexPath.row]["place"]
 
         case 1:
             cell.imageView.image = UIImage(named: sun[indexPath.row]["imageName"]!)
-
         case 2:
             cell.imageView.image = UIImage(named: wave[indexPath.row]["imageName"]!)
         
