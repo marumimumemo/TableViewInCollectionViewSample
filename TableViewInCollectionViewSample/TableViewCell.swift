@@ -12,7 +12,7 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var view: UIView!
+    @IBOutlet weak var customView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,8 +20,7 @@ class TableViewCell: UITableViewCell {
         let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "collectionViewCell2")
         titleLabel.text = "あなたにおすすめの求人"
-        view.backgroundColor = UIColor.gray
-        view.alpha = 0.5
+        customView.backgroundColor = UIColor.gray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

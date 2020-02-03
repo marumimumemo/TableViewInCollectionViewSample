@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
 
         //tableViewの高さ指定
-        tableView.rowHeight = 230
+        tableView.rowHeight = 150
     }
 }
 
@@ -86,7 +86,7 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 120)
+        return CGSize(width: 200, height: 100)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
